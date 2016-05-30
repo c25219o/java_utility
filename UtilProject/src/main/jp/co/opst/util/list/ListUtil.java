@@ -13,4 +13,21 @@ public class ListUtil {
         return (list != null && list.size() == 1) ? true : false;
     }
 
+    /**
+     * Integerのリストから最大値のを取得します。
+     * @param integerList 整数(Integer)のリスト
+     * @return リストの全要素の最大値
+     */
+    public static int maxInt(List<Integer> integerList) {
+
+        int max = 0;
+
+        for (int num : integerList) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
 }
