@@ -61,6 +61,10 @@ public final class ListUtil {
             return 0;
         }
 
+        if (hasOnlyNull(integerList)) {
+            return 0;
+        }
+
         int max = integerList.get(0);
         for (int i = 1; i < integerList.size(); i++) {
             int num = integerList.get(i);
@@ -74,6 +78,10 @@ public final class ListUtil {
     public static int minInt(List<Integer> integerList) {
 
         if (integerList == null || integerList.size() == 0) {
+            return 0;
+        }
+
+        if (hasOnlyNull(integerList)) {
             return 0;
         }
 

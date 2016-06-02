@@ -91,6 +91,54 @@ public class ListUtilTest {
 
         // 中身をすべて削除
         intList.clear();
+
+        // 負の数で検証
+        intList.add(-50);
+        intList.add(-10);
+        intList.add(-30);
+        intList.add(-20);
+        assertEquals(-10, ListUtil.maxInt(intList));
+    }
+
+
+    @Test
+    public void testMinInt() {
+        List<Integer> intList = null;
+
+        // nullの場合の戻り値は0
+        assertEquals(0, ListUtil.minInt(intList));
+
+        intList = new ArrayList<>();
+        // 空の場合の戻り値は0
+        assertEquals(0, ListUtil.minInt(intList));
+
+        // リストの中身が全てnullの場合の戻り値は0
+        intList.add(null);
+        intList.add(null);
+        intList.add(null);
+        assertEquals(0, ListUtil.minInt(intList));
+
+        // 中身をすべて削除
+        intList.clear();
+
+        // リストに整数を追加
+        intList.add(30);
+        assertEquals(30, ListUtil.minInt(intList));
+
+        intList.add(50);
+        intList.add(20);
+        intList.add(40);
+        assertEquals(20, ListUtil.minInt(intList));
+
+        // 中身をすべて削除
+        intList.clear();
+
+        // 負の数で検証
+        intList.add(-10);
+        intList.add(-30);
+        intList.add(-50);
+        intList.add(-20);
+        assertEquals(-50, ListUtil.minInt(intList));
     }
 
 }
