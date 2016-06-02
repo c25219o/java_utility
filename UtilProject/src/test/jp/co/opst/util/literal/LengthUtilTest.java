@@ -1,4 +1,4 @@
-package jp.co.opst.util.variable;
+package jp.co.opst.util.literal;
 
 import static org.junit.Assert.*;
 
