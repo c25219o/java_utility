@@ -12,7 +12,7 @@ public final class ListUtil {
      * @return <code>true</code>:リストはただひとつの要素を持つ
      */
     public static boolean hasOnlyOneElement(List<?> list) {
-        return (list != null && list.size() == 1) ? true : false;
+        return (list != null && list.size() == 1);
     }
 
     /**
@@ -21,7 +21,7 @@ public final class ListUtil {
      * @return
      */
     public static boolean isEmptyOrNull(List<?> list) {
-        return (list == null || list.isEmpty()) ? true : false;
+        return (list == null || list.isEmpty());
     }
 
     /**
@@ -52,44 +52,33 @@ public final class ListUtil {
      */
     public static int maxInt(List<Integer> integerList) {
 
-        int max = 0;
-
         if (integerList == null || integerList.size() == 0) {
-            return max;
+            return 0;
         }
 
-        max = integerList.get(0);
-
-        for (int num : integerList) {
-
-            // 初期値が0のため、
-            if (num < 0) {
-                if (max == 0) {
-                    max = num;
-                }
-
-            } else if (num > max) {
+        int max = integerList.get(0);
+        for (int i = 1; i < integerList.size(); i++) {
+            int num = integerList.get(i);
+            if (num > max) {
                 max = num;
             }
         }
         return max;
-
     }
 
     public static int minInt(List<Integer> integerList) {
 
-        int min = 0;
-
         if (integerList == null || integerList.size() == 0) {
-            return min;
+            return 0;
         }
 
-        for (int num : integerList) {
+        int min = integerList.get(0);
+        for (int i = 1; i < integerList.size(); i++) {
+            int num = integerList.get(i);
             if (num < min) {
                 min = num;
             }
         }
-
         return min;
     }
 
