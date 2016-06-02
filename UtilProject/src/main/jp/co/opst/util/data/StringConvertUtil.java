@@ -1,9 +1,17 @@
 package jp.co.opst.util.data;
 
 
+/**
+ * @author Yui
+ *
+ * 文字列変換ユーティリティクラス
+ * mainメソッドあるいは他プロジェクトより使用したいメソッドを呼び出してください。
+ * 各メソッドの用途はメソッドのJavadocをご参照ください。
+ *
+ */
 public class StringConvertUtil {
 
-	
+
     public static void main(String[] args) {
         String columns = "GOODS_NUM, GOODS_NAME, GOODS_PRICE, GOODS_EXP, MAKER, REG_DATE, LST_UPDATE_TIME";
         printFieldFromCSVColumn(columns);
@@ -11,7 +19,7 @@ public class StringConvertUtil {
 
     /**
      * CSV形式のカラム名からprivateなString型のフィールド名を作成し、コンソールに出力します。
-     * @param csv
+     * @param csv csv形式のカラム一覧(カラム間のスペースは自動的に削除されます。)
      */
     public static void printFieldFromCSVColumn(String csv) {
 
@@ -31,17 +39,17 @@ public class StringConvertUtil {
 
     /**
      * 大文字とアンダースコアで構成されているカラム名を、キャメルケースに変換します。
-     * @param str
-     * @return
+     * @param column DBのカラム名(大文字＋アンダースコア)
+     * @return カラム名をキャメルケースに直した文字列
      */
-    private static String columnToCamel(String str) {
-        str = str.toLowerCase();
+    private static String columnToCamel(String column) {
+        column = column.toLowerCase();
 
-        if (!str.contains("_")) {
-            return str;
+        if (!column.contains("_")) {
+            return column;
         }
 
-        String[] wordArray = str.split("_");
+        String[] wordArray = column.split("_");
         for (int i = 1; i < wordArray.length; i++) {
             if (wordArray[i] == null || wordArray[i].isEmpty()) {
                 continue;
