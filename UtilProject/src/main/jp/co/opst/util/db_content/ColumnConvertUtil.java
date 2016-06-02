@@ -1,19 +1,25 @@
-package jp.co.opst.util.data;
+package jp.co.opst.util.db_content;
 
 
 /**
- * @author Yui
  *
  * 文字列変換ユーティリティクラス
  * mainメソッドあるいは他プロジェクトより使用したいメソッドを呼び出してください。
  * 各メソッドの用途はメソッドのJavadocをご参照ください。
  *
+ * @author Yui
+ *
  */
-public class StringConvertUtil {
+public class ColumnConvertUtil {
 
 
+    /**
+     * convert呼び出し用mainメソッド
+     * @param args コマンドライン引数(カラム名)
+     */
     public static void main(String[] args) {
-        String columns = "GOODS_NUM, GOODS_NAME, GOODS_PRICE, GOODS_EXP, MAKER, REG_DATE, LST_UPDATE_TIME";
+//        String columns = "GOODS_NUM, GOODS_NAME, GOODS_PRICE, GOODS_EXP, MAKER, REG_DATE, LST_UPDATE_TIME";
+        String columns = args[0];
         printFieldFromCSVColumn(columns);
     }
 
