@@ -1,5 +1,10 @@
-package jp.co.opst.util.variable;
+package jp.co.opst.util.literal;
 
+/**
+ * @author Yui
+ * リテラルの長さに関するユーティリティクラス
+ *
+ */
 public final class LengthUtil {
 
     private LengthUtil() {}
