@@ -2,6 +2,11 @@ package jp.co.opst.util.list;
 
 import java.util.List;
 
+/**
+ * @author Yui
+ * java.util.Listに関するユーティリティクラス
+ *
+ */
 public final class ListUtil {
 
     /**
