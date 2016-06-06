@@ -19,7 +19,8 @@ public class ColumnConvertUtil {
      */
     public static void main(String[] args) {
 //        String columns = "GOODS_NUM, GOODS_NAME, GOODS_PRICE, GOODS_EXP, MAKER, REG_DATE, LST_UPDATE_TIME";
-        String columns = args[0];
+//        String columns = args[0];
+        String columns = "STAFF_NO, PASSWORD, NAME, AGE, SEX, REGISTER_DATE, LAST_UPD_DATE";
         printFieldFromCSVColumn(columns);
     }
 
