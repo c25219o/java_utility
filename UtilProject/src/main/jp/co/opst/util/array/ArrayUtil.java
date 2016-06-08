@@ -58,7 +58,7 @@ public final class ArrayUtil {
 	private static boolean contains(String[] strArray, String str) {
 		// TODO nullチェック
 		for (String each : strArray) {
-			if (each == str) {
+			if (each == str || each.equals(str)) {
 				return true;
 			}
 		}
