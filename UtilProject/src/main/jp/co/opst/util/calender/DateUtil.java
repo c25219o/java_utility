@@ -2,6 +2,7 @@ package jp.co.opst.util.calender;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 
 import jp.co.opst.util.literal.IntegerUtil;
 
@@ -9,9 +10,10 @@ public class DateUtil {
 
 	// yyyy/MM/ddにすると、一桁の月や日も例外の対象になった...
 	// private static final String PATTERN = "yyyy/MM/dd";
-	private static final String PATTERN = "yyyy/M/d";
+	private static final String PATTERN = "u/M/d";
 
-	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN);
+	private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern(PATTERN)
+	        .withResolverStyle(ResolverStyle.STRICT);
 
 	public static boolean exists(String year, String month, String day) {
 		if (IntegerUtil.isNotInteger(year) || IntegerUtil.isNotInteger(month) || IntegerUtil.isNotInteger(day)) {
@@ -37,9 +39,9 @@ public class DateUtil {
 class Main {
 	public static void main(String[] args) {
 
-		String year = "2015";
-		String month = "13";
-		String day = "3";
+		String year = "1992";
+		String month = "2";
+		String day = "29";
 
 		if (DateUtil.exists(year, month, day)) {
 			System.out.println("日付です");
