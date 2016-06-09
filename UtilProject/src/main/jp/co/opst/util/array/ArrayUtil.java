@@ -12,7 +12,7 @@ public final class ArrayUtil {
 	/**
 	 * int型の配列から、要素が0であるものを除いた配列を返します。<br>
 	 * 配列がnullあるいは空の場合にのみ、要素数1、初めの要素が0の配列を返します。
-	 * 
+	 *
 	 * @param intArray
 	 *            0を除く前の配列
 	 * @return 引数で受け取った配列から0を除いた
