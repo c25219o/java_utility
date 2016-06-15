@@ -20,6 +20,14 @@ public class IntegerUtil {
 		return (m.find());
 	}
 
+	public static boolean isJapanZipCode(String str) {
+		return LengthUtil.isEmpty(str) ? false : str.matches("^[0-9]{3}-[0-9]{4}$");
+	}
+
+	public static boolean isJapanTel(String str) {
+		return LengthUtil.isEmpty(str) ? false : str.matches("^[0-9]+-[0-9]+-[0-9]+$");
+	}
+
 	public static boolean isNotInteger(Object object) {
 		return !isInteger(object);
     }
